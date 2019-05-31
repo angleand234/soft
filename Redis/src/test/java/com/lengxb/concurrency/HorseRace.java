@@ -9,7 +9,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import org.bouncycastle.crypto.RuntimeCryptoException;
 
 public class HorseRace {
 	private static int counter = 0;
@@ -84,7 +83,7 @@ class Horse implements Runnable {
 		} catch (InterruptedException e) {
 			// TODO: handle exception
 		}catch (BrokenBarrierException e) {
-			throw new RuntimeCryptoException();
+			throw new RuntimeException();
 		}
 	}
 	public String toString() {
