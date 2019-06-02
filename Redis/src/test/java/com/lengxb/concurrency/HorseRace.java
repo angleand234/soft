@@ -9,7 +9,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * 赛马游戏仿真
+ * @author ME
+ *
+ * 2019年6月2日下午11:08:18
+ */
 public class HorseRace {
 	private static int counter = 0;
 	static final int FINSH_LINE =75;

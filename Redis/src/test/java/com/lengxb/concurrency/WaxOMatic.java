@@ -4,6 +4,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 车辆打蜡仿真
+ * @author ME
+ *
+ * 2019年6月2日下午10:25:21
+ */
 public class WaxOMatic {
 	public static void main(String[] args) throws Exception {
 		Car car = new Car();
@@ -39,7 +45,12 @@ class Car {
 		}
 	}
 }
-
+/**
+ * 打蜡
+ * @author ME
+ *
+ * 2019年6月2日下午10:26:41
+ */
 class WaxOn implements Runnable {
 	private Car car;
 	public WaxOn(Car car) {
@@ -63,7 +74,12 @@ class WaxOn implements Runnable {
 	}
 	
 }
-
+/**
+ * 抛光
+ * @author ME
+ *
+ * 2019年6月2日下午10:26:54
+ */
 class WaxOff implements Runnable {
 	private Car car;
 	public WaxOff(Car car) {
