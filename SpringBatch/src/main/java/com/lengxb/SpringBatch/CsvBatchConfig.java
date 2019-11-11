@@ -155,9 +155,17 @@ public class CsvBatchConfig {
         return stepBuilderFactory
                 .get("step1")
                 .<Person,Person>chunk(65)//批处理每次提交65000条数据
+                //.readerIsTransactionalQueue()
+                .faultTolerant()
+                .skipLimit(65)
+                .skip(SkipException.class)
                 .reader(reader)//给step绑定reader
                 .processor(processor)//给step绑定processor
                 .writer(writer)//给step绑定writer
+                .listener(new CsvItemReaderListener())
+                .listener(new CsvItemWriterListener())
+                .listener(new CsvChunkListener())
+                .listener(new CsvSkipListener())
                 .build();
     }
 

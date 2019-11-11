@@ -17,6 +17,8 @@ public class CsvItemProcessor extends ValidatingItemProcessor<Person> {
             item.setNation("01");
         } else {
             item.setNation("02");
+            item.setNation("汉族");
+            throw new SkipException();
         }
         return item;
     }
